@@ -160,14 +160,14 @@ public class convierteLibro {
 					OutputStreamWriter osw=new OutputStreamWriter(new FileOutputStream(salida.getText(),true),"ISO-8859-1");
 					
 					// Bucle para leer de un fichero y escribir en el otro.
-					byte[] car = new byte[1024];
+					char[] car = new char[1024];
 					String linea=car.toString();
 					int leidos = isr.read();
 					while (leidos > 0)
 					{
+							osw.write(car,0,leidos);
 							leidos=isr.read();
-							car = new byte[1024];
-							linea=car.toString();
+							
 							
 					}
 
